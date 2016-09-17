@@ -15,4 +15,22 @@ Vue.use(VueRouter);
 // console.log(app);
 
 const router = new VueRouter();
+const Foo = Vue.extend({
+  template: '<p>This is foo!</p>',
+});
+
+const Bar = Vue.extend({
+  template: '<p>This is bar!</p>',
+});
+
+
+router.map({
+  '/foo': {
+    component: Foo,
+  },
+  '/bar': {
+    component: Bar,
+  },
+});
+
 router.start(App, 'body');

@@ -1,6 +1,12 @@
 <template>
   <div class="background">
     <div class="img">
+      <!-- use router-view element as route outlet -->
+      <div :class.sync="routerShow">
+        <router-view></router-view>
+        <p>当前路径: {{$route.path}}</p>
+        <p>当前路由参数: {{$route.params | json}}</p>
+      </div>
     </div>
   </div>
   <div class="form">
@@ -19,6 +25,7 @@
                 minlength="6" required icon></bs-input>
       　
       <hr/>
+
       <button type="button" class="btn btn-primary" v-on:click="login">立即登陆</button>
       <button type="button" class="btn btn-danger">忘记密码</button>
     </form>
@@ -28,6 +35,7 @@
 <script>
   import { alert, input } from 'vue-strap';
   export default {
+    replace: false,
     components: {
       alert,
       bsInput: input,
@@ -37,15 +45,17 @@
         username: null,
         password: null,
         showRight: false,
+        routerShow: '',
       };
     },
     methods: {
-      login: function login(e) {
+      login: function login() {
         this.showRight = true;
-        console.log(this, e);
-        this.$http.get('http://www.hainuo.info').then((response) => {
-          console.log(response);
-        });
+        console.log(this);
+        this.$router.go('/bar');
+//        this.$http.get('http://www.hainuo.info').then((response) => {
+//          console.log(response);
+//        });
       },
     },
   };
@@ -62,10 +72,9 @@
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
-    height: 100%;
     overflow: hidden;
     min-width: 100rem;
+    min-height: 50rem;
   }
 
   .background .img {
