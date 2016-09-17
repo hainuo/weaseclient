@@ -6,6 +6,11 @@
         <router-view></router-view>
         <p>当前路径: {{$route.path}}</p>
         <p>当前路由参数: {{$route.params | json}}</p>
+        <hr/>
+        <div>
+          <Display></Display>
+          <Increment></Increment>
+        </div>
       </div>
     </div>
   </div>
@@ -17,28 +22,40 @@
     </alert>
     <form class="loginForm">
       <div class="text-center margin-5 h3">登陆</div>
-      <bs-input :value.sync="username" label="用户名" name="username" type="text" help="仅允许小写字母和数字。" error="请输入用户名"
-                placeholder="仅能以小写字母开始。"
-                pattern="^[a-z][a-z0-9]+$" :mask="mask" minlength="5" required icon></bs-input>
-      <bs-input :value.sync="password" label="密码" name="password" help="请保护好你的密码。" placeholder="至少6为字母或者数字"
-                type="password" error="请输入密码"
-                minlength="6" required icon></bs-input>
-      　
+      <div class="input-group">
+        <bs-input :value.sync="username" label="用户名" name="username" type="text" help="仅允许小写字母和数字。" error="请输入用户名"
+                  placeholder="仅能以小写字母开始。"
+                  pattern="^[a-z][a-z0-9]+$" :mask="mask" minlength="5" required icon></bs-input>
+        <bs-input :value.sync="password" label="密码" name="password" help="请保护好你的密码。" placeholder="至少6为字母或者数字"
+                  type="password" error="请输入密码"
+                  minlength="6" required icon></bs-input>
+      </div>
       <hr/>
-
-      <button type="button" class="btn btn-primary" v-on:click="login">立即登陆</button>
-      <button type="button" class="btn btn-danger">忘记密码</button>
+      <div class="checkbox-group">
+        <checkbox button :checked.sync="remember" value="1" v-on:click="" type="success">记住登陆状态</checkbox>
+      </div>
+      <hr/>
+      <div class="button-group">
+        <button type="button" class="btn btn-primary" v-on:click="login">立即登陆</button>
+        <button type="button" class="btn btn-danger">忘记密码</button>
+      </div>
     </form>
   </div>
 
 </template>
 <script>
-  import { alert, input } from 'vue-strap';
+  import { alert, input, checkbox } from 'vue-strap';
+  import Display from './components/Display.vue';
+  import Increment from './components/Increment.vue';
+  import store from './vuex/store';
   export default {
     replace: false,
     components: {
       alert,
+      checkbox,
       bsInput: input,
+      Display,
+      Increment,
     },
     data: function data() {
       return {
@@ -46,6 +63,7 @@
         password: null,
         showRight: false,
         routerShow: '',
+        remember: '',
       };
     },
     methods: {
@@ -58,6 +76,7 @@
 //        });
       },
     },
+    store,
   };
 
 </script>
@@ -66,6 +85,11 @@
     background-color: #e7e8eb;
     height: 100%;
     width: 100%;
+  }
+
+  hr {
+    clear: both;
+    margin: 0.5rem;
   }
 
   .background {
@@ -88,7 +112,7 @@
   .loginForm {
     position: absolute;
     width: 40rem;
-    height: 20rem;
+    height: 23rem;
     bottom: 1rem;
     right: 3rem;
     border: 1px solid red;
@@ -110,6 +134,15 @@
   .loginForm .form-group .form-control {
     width: 20rem;
     float: left;
+  }
+
+  .loginForm .checkbox-group {
+    width: 10rem;
+    margin: 0px auto;
+  }
+
+  .loginForm .checkbox-group label.btn > input[type=checkbox] {
+    position: relative;
   }
 
   .loginForm .form-group .control-label {
