@@ -1,7 +1,7 @@
 {
   "name": "wease",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "wease wechat platform web client",
   "author": "hainuo <admin@hainuo.info>",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "babel-runtime": "^6.0.0",
     "vue": "^1.0.21",
+    "vue-auth": "^0.4.0",
     "vue-resource": "^1.0.2",
     "vue-router": "^0.7.13",
     "vue-strap": "^1.1.15",

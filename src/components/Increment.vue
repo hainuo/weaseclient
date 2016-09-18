@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click='increment'>Increment +1</button>
+    <button @click='increment'>Increment +10</button>
   </div>
 </template>
 

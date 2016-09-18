@@ -14,12 +14,12 @@
       </div>
     </div>
   </div>
-  <div class="form">
-    <alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="32rem" dismissable>
-      <span class="glyphicon glyphicon-ok"></span>
-      <strong>登陆成功!</strong>
-      <p>维意微信公众管理平台欢迎您！</p>
-    </alert>
+  <alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="32rem" dismissable>
+    <span class="glyphicon glyphicon-ok"></span>
+    <strong>登陆成功!</strong>
+    <p>维意微信公众管理平台欢迎您！</p>
+  </alert>
+  <div class="form" :class.sync="formShow">
     <form class="loginForm">
       <div class="text-center margin-5 h3">登陆</div>
       <div class="input-group">
@@ -64,16 +64,25 @@
         showRight: false,
         routerShow: '',
         remember: '',
+        formShow: '',
       };
     },
     methods: {
       login: function login() {
         this.showRight = true;
-        console.log(this);
-        this.$router.go('/bar');
-//        this.$http.get('http://www.hainuo.info').then((response) => {
-//          console.log(response);
-//        });
+//        console.log(this);
+//        this.$router.go('/bar');
+        this.$http.post(
+          'http://localhost:8081/Login/index',
+          {
+            username: this.username,
+            password: this.password,
+          }
+        ).then((response) => {
+          console.log(response.data);
+          this.formShow = 'hide';
+//          if ( this.remember ) this.remember = 1;
+        });
       },
     },
     store,
