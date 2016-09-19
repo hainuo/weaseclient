@@ -3,16 +3,10 @@ import App from './App';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
-import VueAuth from 'vue-auth';
 
 Vue.use(Vuex);
 Vue.use(VueResource);
 Vue.use(VueRouter);
-Vue.use(VueAuth, {
-  storagePrefix: '_wease.',
-  // authPath: '/manage',
-  redirectType: 'browser',
-});
 /* eslint-disable no-new */
 // const app =
 // new Vue({
@@ -45,5 +39,7 @@ router.map({
     },
   },
 });
-
 router.start(App, 'body');
+Vue.use(require('@websanova/vue-auth'), {
+  solvesVar: 'type',
+});
