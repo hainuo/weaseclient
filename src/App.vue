@@ -65,13 +65,13 @@
         routerShow: '',
         remember: '',
         formShow: '',
+        valide: null,
       };
     },
     methods: {
       login: function login() {
-        this.showRight = true;
 //        console.log(this);
-        this.$router.go('/bar');
+//        this.$router.go('/bar');
         this.$http.post(
           'http://localhost:8081/Login/index',
           {
@@ -82,10 +82,22 @@
           console.log(response.data.data);
 //          this.formShow = 'hide';
 //          if ( this.remember ) this.remember = 1;
-          this.$auth.setToken(response.data.data);
-          console.log(this.$auth.setUserData(JSON.stringify(response.data.data)));
-          console.log(this.$auth.getUserData());
-          console.log(this.$auth.isAuthenticated());
+          this.$auth.setToken(response.data.data.token);
+          console.log(this.$auth.getToken());
+          const userdata = {
+            remember: this.remember,
+            username: this.username,
+          };
+//          console.log(this.$auth.setUserData(JSON.stringify(response.data.data)));
+//          console.log(this.$auth.getUserData());
+          if (this.$auth.isAuthenticated()) {
+            this.$auth.setUserData(userdata);
+            this.formShow = 'hide';
+            this.showRight = true;
+          }
+          console.log(this.$auth.hasToken());
+        }).then((message) => {
+          console.log(message);
         });
       },
     },
