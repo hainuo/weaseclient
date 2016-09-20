@@ -71,7 +71,7 @@
       login: function login() {
         this.showRight = true;
 //        console.log(this);
-//        this.$router.go('/bar');
+        this.$router.go('/bar');
         this.$http.post(
           'http://localhost:8081/Login/index',
           {
@@ -79,9 +79,13 @@
             password: this.password,
           }
         ).then((response) => {
-          console.log(response.data);
-          this.formShow = 'hide';
+          console.log(response.data.data);
+//          this.formShow = 'hide';
 //          if ( this.remember ) this.remember = 1;
+          this.$auth.setToken(response.data.data);
+          console.log(this.$auth.setUserData(JSON.stringify(response.data.data)));
+          console.log(this.$auth.getUserData());
+          console.log(this.$auth.isAuthenticated());
         });
       },
     },
