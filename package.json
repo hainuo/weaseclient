@@ -18,6 +18,7 @@
     "vue-auth": "^4.0.1",
     "vue-resource": "^1.0.2",
     "vue-router": "^0.7.13",
+    "vue-socket.io": "^1.0.2",
     "vue-strap": "^1.1.15",
     "vuex": "^1.0.0-rc.2"
   },

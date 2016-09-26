@@ -4,12 +4,13 @@ import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import VueAuth from 'vue-auth';
-
+import VueSocketIo from 'vue-socket.io';
 // import Login from './components/pages/Login';
 
 Vue.use(Vuex);
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(VueSocketIo, 'http://127.0.0.1:8081');
 /* eslint-disable no-new */
 // const app =
 // new Vue({
