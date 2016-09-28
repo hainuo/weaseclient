@@ -1,6 +1,6 @@
 # wease
 
-> A Vue.js project
+> wease-wxplatform 维意工作台
 
 ## Build Setup
 
