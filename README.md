@@ -1,6 +1,6 @@
 # wease
 
-> A Vue.js project
+> 维意做最好用的微信公众平台管理工具
 
 ## Build Setup
 
