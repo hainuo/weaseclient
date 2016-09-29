@@ -1,37 +1,39 @@
 <template>
-  <div id="background">
-    <div class="img img1"></div>
-  </div>
-  <div class="container full-height">
-    <div id="form-wrapper">
-      <div class="form">
-        <div class="page-header">
-          <h4 class="text-center">用户登录</h4>
-        </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="name" class="form-control" name="name" id="name" value="" placeholder="用户名">
+  <div>
+    <div id="background">
+      <div class="img img1"></div>
+    </div>
+    <div class="container full-height">
+      <div id="form-wrapper">
+        <div class="form">
+          <div class="page-header">
+            <h4 class="text-center">用户登录</h4>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-lock"></i></span>
-            <input type="password" class="form-control" name="password" id="password" placeholder="密码">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="name" class="form-control" name="name" id="name" value="" placeholder="用户名">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label class="switch">
-            <input type="checkbox" id="mike" value="Mike" name="remember" v-model="remember"> <i></i>记住登录
-          </label>
-          <a class="pull-right">忘记密码？</a>
-        </div>
-        <div class="form-group">
-          <button type="button" @click="login" class="btn btn-block btn-success">登 录</button>
-        </div>
-        <div class="form-group">
-          <div class="clearfix">
-            <a class="pull-right text-light">POWERED BY WEase.</a>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" class="form-control" name="password" id="password" placeholder="密码">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="switch">
+              <input type="checkbox" id="mike" value="Mike" name="remember" v-model="remember"> <i></i>记住登录
+            </label>
+            <a class="pull-right">忘记密码？</a>
+          </div>
+          <div class="form-group">
+            <button type="button" @click="login" class="btn btn-block btn-success">登 录</button>
+          </div>
+          <div class="form-group">
+            <div class="clearfix">
+              <a class="pull-right text-light">POWERED BY WEase.</a>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +63,7 @@
   };
 </script>
 
-<style>
+<style scope>
   html {
     height: 100%;
     font-size: 1em;
@@ -87,7 +89,7 @@
   }
 
   .img.img1 {
-    background: url("assets/bg.jpg");
+    background: url("../assets/bg.jpg");
     width: 100%;
     height: 100%;
     background-size: cover !important;
@@ -181,11 +183,12 @@
     -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 2rem red;
   }
 
-  a.pull-right{
+  a.pull-right {
     display: block;
     line-height: 2.2rem;
   }
-  a.pull-right.text-light{
+
+  a.pull-right.text-light {
     font-size: 1rem;
   }
 </style>
