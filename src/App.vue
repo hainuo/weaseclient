@@ -10,13 +10,13 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"><i class="ion-ios-person"></i></span>
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
             <input type="name" class="form-control" name="name" id="name" value="" placeholder="用户名">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"><i class="ion-ios-locked-outline"></i></span>
+            <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-lock"></i></span>
             <input type="password" class="form-control" name="password" id="password" placeholder="密码">
           </div>
         </div>
@@ -24,14 +24,14 @@
           <label class="switch">
             <input type="checkbox" id="mike" value="Mike" name="remember" v-model="remember"> <i></i>记住登录
           </label>
-          <a href="" class="pull-right">忘记密码？</a>
+          <a class="pull-right">忘记密码？</a>
         </div>
         <div class="form-group">
           <button type="button" @click="login" class="btn btn-block btn-success">登 录</button>
         </div>
         <div class="form-group">
           <div class="clearfix">
-            <a href="" class="pull-right text-light">POWERED BY WEase.</a>
+            <a class="pull-right text-light">POWERED BY WEase.</a>
           </div>
         </div>
       </div>
@@ -129,8 +129,7 @@
   }
 
   .page-header {
-    width: 70%;
-    margin: 1rem auto;
+    margin: 0 auto;
   }
 
   h2.text-center {
@@ -151,32 +150,42 @@
   .switch i {
     display: inline-block;
     cursor: pointer;
-    padding-right: 20px;
+    padding-right: 1.2rem;
     transition: all ease 0.2s;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
     -webkit-transition: all ease 0.2s;
-    border-radius: 20px;
-    box-shadow: inset 0 0 1px rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+    box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5);
   }
 
   .switch i:before {
     display: block;
     content: '';
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
+    width: 1.5rem;
+    height: 1.2rem;
+    border-radius: 1rem;
     background: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
   }
 
   .switch :checked + i {
     padding-right: 0;
-    padding-left: 20px;
-    box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 40px lightblue;
-    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 40px lightblue;
+    padding-left: 1.2rem;
+    box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5), inset 0 0 40px lightblue;
+    -webkit-box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5), inset 0 0 2rem lightblue;
   }
 
   .switch.red :checked + i {
     box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 40px red;
-    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 40px red;
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 2rem red;
+  }
+
+  a.pull-right{
+    display: block;
+    line-height: 2.2rem;
+  }
+  a.pull-right.text-light{
+    font-size: 1rem;
   }
 </style>
