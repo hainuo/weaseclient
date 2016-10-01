@@ -54,7 +54,7 @@
         console.log(this.remember);
       },
     },
-    ready() {
+    mounted() {
       console.log(1234);
     },
     compiled() {
