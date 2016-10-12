@@ -1,6 +1,6 @@
 {
   "name": "wease",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "维意做最好用的微信公众平台管理工具",
   "author": "hainuo <admin@hainuo.info>",
   "private": true,
@@ -14,9 +14,10 @@
   },
   "dependencies": {
     "@websanova/vue-auth": "^1.1.0-beta",
-    "vue": "^2.0.0-rc.8",
+    "vue": "^2.0.1",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.0-rc.7"
+    "vue-router": "^2.0.0",
+    "vue-template-compiler": "^2.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
