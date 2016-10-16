@@ -1744,6 +1744,10 @@ ejs@~0.8.3:
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-0.8.8.tgz#ffdc56dcc35d02926dd50ad13439bbc54061d598"
 
+element-ui@next:
+  version "1.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-1.0.0-rc.6.tgz#11744b91478005b072ae315a93d2984876d06cf3"
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"

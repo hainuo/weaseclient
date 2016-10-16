@@ -22,9 +22,15 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="switch">
-              <input type="checkbox" id="mike" value="Mike" name="remember" v-model="remember"> <i></i>记住登录
-            </label>
+            <el-switch
+              v-model="remember"
+              name="remember"
+              on-color="#13ce66"
+              width="120"
+              on-text="记住密码"
+              off-text=""
+              off-color="#ff4949">
+            </el-switch>
             <a class="pull-right">忘记密码？</a>
           </div>
           <div class="form-group">

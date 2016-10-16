@@ -2,11 +2,16 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueAuth from '@websanova/vue-auth';
 import VueResource from 'vue-resource';
-import Login from './components/Login.vue';
+import Element from 'element-ui';
+import 'element-ui/lib/theme-default/index.css';
+
 import './css/main.css';
+import Login from './components/Login.vue';
+
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.use(Element);
 // 0. If using a module system, call Vue.use(VueRouter)
 // 1. Define route components.
 // These can be imported from other files
