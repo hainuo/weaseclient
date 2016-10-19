@@ -26,12 +26,11 @@
               v-model="remember"
               name="remember"
               on-color="#13ce66"
-              width="120"
-              on-text="记住密码"
-              off-text=""
               off-color="#ff4949">
             </el-switch>
+            <span id="remember">记住密码</span>
             <a class="pull-right">忘记密码？</a>
+            <div class="clear"></div>
           </div>
           <div class="form-group">
             <button type="button" @click="login" class="btn btn-block btn-success">登 录</button>
@@ -128,8 +127,9 @@
   }
 
   .form-group {
-    margin: 0.2rem auto;
+    margin: 0.5rem auto;
     position: relative;
+    line-height: 1.5;
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
     opacity: 1;
     filter: alpha(opacity=100);
@@ -150,48 +150,20 @@
     line-height: 1.2;
     color: inherit;
   }
-
-  .switch input {
-    display: none;
+  .form-group .el-switch{
+    float: left;
   }
-
-  .switch i {
-    display: inline-block;
-    cursor: pointer;
-    padding-right: 1.2rem;
-    transition: all ease 0.2s;
-    margin-right: 0.5rem;
-    margin-top: 0.2rem;
-    -webkit-transition: all ease 0.2s;
-    border-radius: 1rem;
-    box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5);
-  }
-
-  .switch i:before {
+  span#remember{
+    float: left;
     display: block;
-    content: '';
-    width: 1.5rem;
-    height: 1.2rem;
-    border-radius: 1rem;
-    background: white;
-    box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
+    margin-left: 0.5rem;
   }
-
-  .switch :checked + i {
-    padding-right: 0;
-    padding-left: 1.2rem;
-    box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5), inset 0 0 40px lightblue;
-    -webkit-box-shadow: inset 0 0 0.05rem rgba(0, 0, 0, .5), inset 0 0 2rem lightblue;
+  .clear{
+    clear: both;
   }
-
-  .switch.red :checked + i {
-    box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 40px red;
-    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5), inset 0 0 2rem red;
-  }
-
   a.pull-right {
     display: block;
-    line-height: 2.2rem;
+    /*line-height: 2.2rem;*/
   }
 
   a.pull-right.text-light {
